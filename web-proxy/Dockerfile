@@ -17,7 +17,7 @@ FROM golang:alpine
 RUN apk add --no-cache curl git ca-certificates && \
   rm -rf /var/lib/apt/lists/*
 
-ARG VERSION=0.12.0
+ARG VERSION=0.15.0
 
 WORKDIR /tmp
 
