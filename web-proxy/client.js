@@ -1,7 +1,7 @@
 const {Empty, Greeting, Time} = require('./hello_pb.js');
 const {MainServiceClient} = require('./hello_grpc_web_pb.js');
 
-var client = new MainServiceClient('https://grpc-web-proxy-test.fly.dev:443');
+var client = new MainServiceClient('https://grpc-web-proxy-ernie.fly.dev:443');
 
 client.hello(new Empty(), {}, (err, response) => {
     console.log(response.getMessage());
