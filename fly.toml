@@ -1,0 +1,48 @@
+# fly.toml app configuration file generated for grpc-service on 2024-03-16T10:25:30-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'grpc-service'
+primary_region = 'ewr'
+
+[build]
+  [build.args]
+    GO_VERSION = '1.21'
+
+[env]
+  PORT = '54321'
+
+[http_service]
+  internal_port = 54321
+  force_https = false
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+# [services.ports.http_options]
+    # h2_backend = true
+
+#[[services.ports]]
+  #handlers = ["tls"]
+  #port = 443
+  #tls_options = { "alpn" = ["h2"] }
+
+#[http_service.http_options]
+  #h2_backend = true
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory_mb = 256
+
+[[services]]
+  internal_port = 54321
+  protocol = "tcp"
+
+[[services.ports]]
+  handlers = ["tls"]
+  port = "443"
+
+[services.ports.tls_options]
+  alpn = ["h2"]
