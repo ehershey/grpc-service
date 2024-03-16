@@ -21,7 +21,6 @@ ARG VERSION=0.15.0
 
 WORKDIR /tmp
 
-RUN curl -sS https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 RUN wget https://github.com/improbable-eng/grpc-web/archive/v$VERSION.tar.gz
 
 WORKDIR /go/src/github.com/improbable-eng/
@@ -31,8 +30,7 @@ RUN mv grpc-web-$VERSION grpc-web
 
 WORKDIR /go/src/github.com/improbable-eng/grpc-web
 
-RUN dep ensure && \
-  GO111MODULE=off go install ./go/grpcwebproxy
+RUN go install ./go/grpcwebproxy
 
 EXPOSE 8080
 ENTRYPOINT [ "/bin/sh", "-c", "exec /go/bin/grpcwebproxy \
