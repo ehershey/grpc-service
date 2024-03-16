@@ -82,7 +82,7 @@ to update it with your web proxy app's hostname and then run:
 
 ```shell
 npm install
-npx webpack client.js
+npx webpack ./client.js
 open index.html
 ```
 
