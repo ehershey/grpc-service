@@ -8,7 +8,7 @@ primary_region = 'ewr'
 
 [build]
   [build.args]
-    GO_VERSION = '1.21'
+    GO_VERSION = '1.22'
 
 [env]
   PORT = '54321'

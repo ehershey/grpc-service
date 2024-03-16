@@ -1,6 +1,6 @@
 module grpc-test
 
-go 1.21
+go 1.22
 
 require (
 	github.com/golang/protobuf v1.4.2
