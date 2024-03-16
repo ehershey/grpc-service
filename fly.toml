@@ -21,17 +21,6 @@ primary_region = 'ewr'
   min_machines_running = 1
   processes = ['app']
 
-# [services.ports.http_options]
-    # h2_backend = true
-
-#[[services.ports]]
-  #handlers = ["tls"]
-  #port = 443
-  #tls_options = { "alpn" = ["h2"] }
-
-#[http_service.http_options]
-  #h2_backend = true
-
 [[vm]]
   size = 'shared-cpu-1x'
   memory_mb = 256
