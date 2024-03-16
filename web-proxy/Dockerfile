@@ -32,7 +32,7 @@ RUN mv grpc-web-$VERSION grpc-web
 WORKDIR /go/src/github.com/improbable-eng/grpc-web
 
 RUN dep ensure && \
-  go install ./go/grpcwebproxy
+  GO111MODULE=off go install ./go/grpcwebproxy
 
 EXPOSE 8080
 ENTRYPOINT [ "/bin/sh", "-c", "exec /go/bin/grpcwebproxy \
